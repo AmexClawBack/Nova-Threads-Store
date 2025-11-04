@@ -18,8 +18,6 @@ export async function POST(req: Request) {
       line_items: [{ price: priceId, quantity }],
       success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/cancel`,
-      // Optional: collect shipping/address/email if you want
-      // shipping_address_collection: { allowed_countries: ["US", "CA"] },
     });
 
     return Response.json({ url: session.url });
