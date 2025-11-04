@@ -1,32 +1,30 @@
-// app/api/checkout/route.ts
-import Stripe from "stripe";
-import { NextResponse } from "next/server";
+﻿import Stripe from "stripe";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
-  apiVersion: "2024-06-20",
-});
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string);
 
 export async function POST(req: Request) {
   try {
     const { priceId, quantity = 1 } = await req.json();
 
-    if (!process.env.STRIPE_SECRET_KEY) {
-      return NextResponse.json({ error: "Missing STRIPE_SECRET_KEY" }, { status: 500 });
-    }
     if (!priceId) {
-      return NextResponse.json({ error: "Missing priceId" }, { status: 400 });
+      return new Response(JSON.stringify({ error: "Missing priceId" }), { status: 400 });
+    }
+    if (!process.env.NEXT_PUBLIC_BASE_URL) {
+      return new Response(JSON.stringify({ error: "Missing NEXT_PUBLIC_BASE_URL" }), { status: 500 });
     }
 
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
       line_items: [{ price: priceId, quantity }],
-      success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/success`,
+      success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/cancel`,
+      // Optional: collect shipping/address/email if you want
+      // shipping_address_collection: { allowed_countries: ["US", "CA"] },
     });
 
-    return NextResponse.json({ url: session.url });
+    return Response.json({ url: session.url });
   } catch (err: any) {
-    console.error("Checkout error:", err?.message || err);
-    return NextResponse.json({ error: "Checkout session failed" }, { status: 500 });
+    console.error("Checkout error:", err);
+    return new Response(JSON.stringify({ error: err.message || "Checkout failed" }), { status: 500 });
   }
 }
