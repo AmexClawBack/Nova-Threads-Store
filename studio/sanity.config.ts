@@ -1,7 +1,7 @@
 import { defineConfig } from "sanity";
 import { deskTool } from "sanity/desk";
 import { visionTool } from "@sanity/vision";
-import schemaTypes from "./schematypes/index"; // <-- default export array
+import schemaTypes from "./schematypes/index";
 
 export default defineConfig({
   name: "default",
