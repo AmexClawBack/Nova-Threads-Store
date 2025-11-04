@@ -9,7 +9,7 @@ export default async function HomePage() {
   return (
     <>
       <Hero />
-      <div className="container py-10 md:py-14">
+      <div className="mx-auto max-w-7xl px-6 md:px-8 py-10 md:py-14">
         <section>
           <div className="mb-6 flex items-end justify-between">
             <h2 className="text-2xl font-extrabold text-brand-ink">Featured</h2>

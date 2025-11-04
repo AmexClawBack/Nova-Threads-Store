@@ -9,8 +9,8 @@ const NavLink = ({ href, children }: { href: string; children: React.ReactNode }
     <Link
       href={href}
       className={
-        "rounded-xl px-3 py-2 text-sm font-medium hover:bg-white/10 " +
-        (active ? "bg-white/15 text-white" : "text-white/90")
+        "rounded-xl px-3 py-2 text-sm font-medium hover:bg-brand-ink/5 " +
+        (active ? "text-brand-ink" : "text-slate-700")
       }
     >
       {children}
@@ -20,9 +20,9 @@ const NavLink = ({ href, children }: { href: string; children: React.ReactNode }
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 bg-brand-ink/95 backdrop-blur supports-[backdrop-filter]:bg-brand-ink/80 shadow">
-      <div className="container flex h-14 items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 text-white">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/85 border-b border-slate-200">
+      <div className="mx-auto max-w-7xl px-6 md:px-8 flex h-14 items-center justify-between">
+        <Link href="/" className="flex items-center gap-2 text-brand-ink">
           <div className="h-7 w-7 rounded-lg bg-brand-mint" />
           <span className="text-base font-extrabold tracking-tight">Nova Threads</span>
         </Link>

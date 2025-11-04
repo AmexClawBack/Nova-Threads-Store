@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Hero() {
   return (
     <section className="bg-gradient-to-br from-brand-sky/20 via-white to-brand-mint/10">
-      <div className="container grid items-center gap-10 py-12 md:grid-cols-2 md:py-16">
+      <div className="mx-auto max-w-7xl px-6 md:px-8 grid items-center gap-10 py-10 md:grid-cols-2 md:py-14">
         <div>
           <span className="inline-block rounded-full bg-white px-3 py-1 text-xs font-semibold text-brand-ink shadow">
             New Drop

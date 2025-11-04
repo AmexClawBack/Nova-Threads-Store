@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="mt-16 border-t border-slate-200 bg-white">
-      <div className="container grid gap-8 py-10 md:grid-cols-4">
+      <div className="mx-auto max-w-7xl px-6 md:px-8 grid gap-8 py-10 md:grid-cols-4">
         <div>
           <div className="mb-2 flex items-center gap-2">
             <div className="h-7 w-7 rounded-lg bg-brand-mint" />
@@ -44,7 +44,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-slate-200 py-4">
-        <div className="container flex items-center justify-between text-xs text-slate-500">
+        <div className="mx-auto max-w-7xl px-6 md:px-8 flex items-center justify-between text-xs text-slate-500">
           <span>© {new Date().getFullYear()} Nova Threads</span>
           <span>Powered by Next.js · Sanity · Stripe</span>
         </div>
