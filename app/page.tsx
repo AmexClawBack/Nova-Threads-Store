@@ -9,7 +9,7 @@ export default async function HomePage() {
   return (
     <>
       <Hero />
-      <div className="container py-12 md:py-16">
+      <div className="container py-10 md:py-14">
         <section>
           <div className="mb-6 flex items-end justify-between">
             <h2 className="text-2xl font-extrabold text-brand-ink">Featured</h2>
@@ -34,24 +34,6 @@ export default async function HomePage() {
               ))}
             </div>
           )}
-        </section>
-
-        <section id="faq" className="mt-16">
-          <h3 className="text-xl font-bold text-brand-ink">FAQ</h3>
-          <div className="mt-4 grid gap-4 md:grid-cols-3">
-            <div className="rounded-2xl bg-white p-5 shadow-soft">
-              <p className="text-sm font-semibold text-brand-ink">Shipping</p>
-              <p className="mt-1 text-sm text-slate-600">Orders ship in 2–4 business days. Free shipping over $75.</p>
-            </div>
-            <div id="returns" className="rounded-2xl bg-white p-5 shadow-soft">
-              <p className="text-sm font-semibold text-brand-ink">Returns</p>
-              <p className="mt-1 text-sm text-slate-600">30-day returns on unworn items. Start a return from your order email.</p>
-            </div>
-            <div className="rounded-2xl bg-white p-5 shadow-soft">
-              <p className="text-sm font-semibold text-brand-ink">Sizing</p>
-              <p className="mt-1 text-sm text-slate-600">True-to-size modern fit. Size up for a looser silhouette.</p>
-            </div>
-          </div>
         </section>
       </div>
     </>
