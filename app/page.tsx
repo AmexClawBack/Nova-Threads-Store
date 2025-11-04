@@ -1,5 +1,3 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import ProductCard from "../components/ProductCard";
 import { getProducts } from "../lib/sanity";
@@ -10,9 +8,8 @@ export default async function HomePage() {
 
   return (
     <>
-      <Header />
       <Hero />
-      <main className="container py-12 md:py-16">
+      <div className="container py-12 md:py-16">
         <section>
           <div className="mb-6 flex items-end justify-between">
             <h2 className="text-2xl font-extrabold text-brand-ink">Featured</h2>
@@ -56,8 +53,7 @@ export default async function HomePage() {
             </div>
           </div>
         </section>
-      </main>
-      <Footer />
+      </div>
     </>
   );
 }
