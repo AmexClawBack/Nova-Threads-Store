@@ -1,0 +1,160 @@
+[
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "options": {
+          "source": "title"
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      },
+      {
+        "name": "description",
+        "type": "text"
+      },
+      {
+        "options": {
+          "layout": "grid"
+        },
+        "of": [
+          {
+            "type": "image"
+          }
+        ],
+        "name": "images",
+        "type": "array"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 1
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "USD cents",
+        "name": "price",
+        "type": "number"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Stripe Price ID (price_...)",
+        "name": "stripePriceId",
+        "type": "string"
+      },
+      {
+        "initialValue": true,
+        "name": "active",
+        "type": "boolean"
+      },
+      {
+        "of": [
+          {
+            "to": [
+              {
+                "type": "category"
+              }
+            ],
+            "type": "reference",
+            "title": "Reference to categories"
+          }
+        ],
+        "name": "categories",
+        "type": "array"
+      }
+    ],
+    "name": "product",
+    "type": "document",
+    "title": "Products"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "options": {
+          "source": "title"
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      }
+    ],
+    "name": "category",
+    "type": "document",
+    "title": "Categories"
+  }
+]

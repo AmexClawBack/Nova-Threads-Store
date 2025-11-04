@@ -1,32 +1,29 @@
-﻿export default function AboutPage() {
-  return (
-    <main className="mx-auto max-w-6xl px-4 py-12 md:py-16">
-      <section className="max-w-3xl">
-        <h1 className="text-3xl font-extrabold tracking-tight">About Nova</h1>
-        <p className="mt-4 text-slate-700">
-          Nova is a small, design-led merch label focused on limited-run drops. We value clean design,
-          durable garments, and a smooth buying experience.
-        </p>
-        <p className="mt-4 text-slate-700">
-          This site is built on Next.js, Sanity CMS, and Stripe Checkout so we can ship fast without
-          sacrificing quality.
-        </p>
-      </section>
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
-      <section className="mt-12 grid gap-8 md:grid-cols-3">
-        <div className="rounded-2xl border border-slate-200 bg-white p-6">
-          <h3 className="text-lg font-bold">Quality</h3>
-          <p className="mt-2 text-sm text-slate-700">Premium blanks, detailed prints, and fit you actually want to wear.</p>
+export default function AboutPage() {
+  return (
+    <>
+      <Header />
+      <main className="container py-12 md:py-16">
+        <h1 className="text-3xl font-extrabold text-brand-ink">About Nova Threads</h1>
+        <p className="mt-4 max-w-prose text-slate-700">
+          We started Nova Threads to create everyday pieces that feel good the second you put them on, and look even better with time.
+          We release small, considered drops so we can obsess over fabric, fit, and finish. No big-box inventory. No trendy noise. Just
+          garments you reach for without thinking.
+        </p>
+        <div className="mt-8 grid gap-6 md:grid-cols-2">
+          <div className="rounded-2xl bg-white p-6 shadow-soft">
+            <p className="text-sm font-semibold text-brand-ink">Responsible Materials</p>
+            <p className="mt-2 text-sm text-slate-600">We favor cotton blends and recycled fibers that balance handfeel, durability, and impact.</p>
+          </div>
+          <div className="rounded-2xl bg-white p-6 shadow-soft">
+            <p className="text-sm font-semibold text-brand-ink">Small-Batch Production</p>
+            <p className="mt-2 text-sm text-slate-600">Limited runs keep quality high and waste low. When a colorway is gone, it&apos;s gone.</p>
+          </div>
         </div>
-        <div className="rounded-2xl border border-slate-200 bg-white p-6">
-          <h3 className="text-lg font-bold">Limited drops</h3>
-          <p className="mt-2 text-sm text-slate-700">When it’s gone, it’s gone. Join the list to catch the next release.</p>
-        </div>
-        <div className="rounded-2xl border border-slate-200 bg-white p-6">
-          <h3 className="text-lg font-bold">Secure & fast</h3>
-          <p className="mt-2 text-sm text-slate-700">Stripe powers checkout. No card data is stored on our servers.</p>
-        </div>
-      </section>
-    </main>
+      </main>
+      <Footer />
+    </>
   );
 }
